@@ -1,0 +1,23 @@
+*
+{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+.lecturer
+{
+    margin-left: 50px;
+    font-family: Verdana;
+}
+
+div :first-child
+{
+    color: blue;
+    font-size: 24pt;
+}
+
+div p span
+{
+    font-family: helvetica;
+}
