@@ -3,41 +3,47 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
     <title>E-commerce Page</title>
 </head>
 <body>
     <main>
         <header>
-            <h1>Mistubashi Games store!</h1>
-            <p>Pc Games for Everyone who can Afford</p>
+            <div>
+                <h1>Mistubashi Games store!</h1>
+                <p>Pc Games for Everyone who can Afford</p>
+            </div>
+            <a href="cart.html">CART</a> 
         </header>
         <hr>
-        <section>
+        <section class="products">
             <h2>Products</h2>
+            <div>
                 <div>
                     <img src="download.jpg" alt=" battefield 6 game cover">
                     <p>Battlefield VI</p>
                     <p>Price: $190.99</p>
-                    <button>Buy</button>
+                    <button onclick="addToCart('Battlefield VI','190.99')">Add To Cart</button>
                 </div>
                 <br>
                 <div>
                     <img src="download (1).jpg" alt="COD Warzone game cover">
                     <p>Call of Duty Warzone</p>
                     <p>Price: $79.99</p>
-                    <button>Buy</button>
+                    <button onclick="addToCart('Call of Duty Warzone','79.99')">Add To Cart</button>
                 </div>
                 <br>
                 <div>
                     <img src="download (2).jpg" alt="Apex lengends game cover">
                     <p>Apex Legends</p>
                     <p>Price: $29.99</p>
-                    <button>Buy</button>
+                    <button onclick="addToCart('Apex Legends','29.99')">Add To Cart</button>
                 </div>
+            </div>
         </section>
         <br>
         <hr>
-        <section>
+        <section class="contact">
             <h2>Contact Us</h2>
             <form action="#" method="post">
                 <label for="name">Name:</label><br>
@@ -49,9 +55,10 @@
                 <label for="message">Message:</label><br>
                 <textarea id="message" name="message" rows="4" required></textarea><br><br>
 
-                <input type="submit" value="Submit">
+                <input type="submit" value="Submit" id="submit">
             </form>
         </section>
     </main>
+    <script src="script.js"></script>
 </body>
 </html>

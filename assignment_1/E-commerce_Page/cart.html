@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>E-commerce cart</title>
+</head>
+<body>
+    <main>
+         <header>
+            <div>
+                <h1>Mistubashi Games store!</h1>
+                <p>Pc Games for Everyone who can Afford</p>
+            </div>
+            <a href="index.html">STORE</a> 
+        </header>
+        <div class="cart">
+            <ul id ="cart-list"></ul>
+            <p>Total: $<span id = "total"></span></p>
+             <div>
+                <button>Purchase</button>
+            </div>
+        </div>
+    </main>
+   <script>
+document.addEventListener("DOMContentLoaded", () => {
+  // Retrieve stored cart or empty array
+  let cart = JSON.parse(localStorage.getItem("cart")) || [];
+  const cartList = document.getElementById("cart-list");
+  const totalEl = document.getElementById("total");
+
+  // Function to re-render the cart items
+  function renderCart() {
+    cartList.innerHTML = ""; // clear list
+    let total = 0;
+
+    cart.forEach((item, index) => {
+      const listItem = document.createElement("li");
+      listItem.className = "cart-item";
+      listItem.innerHTML = `
+        ${item.name} - $${item.price}
+        <button class="remove" data-index="${index}">Remove</button>
+      `;
+      cartList.appendChild(listItem);
+      total += Number(item.price);
+    });
+
+    totalEl.textContent = total.toFixed(2);
+  }
+
+  // Event delegation for remove buttons
+  cartList.addEventListener("click", (e) => {
+    if (e.target.classList.contains("remove")) {
+      const index = e.target.dataset.index;
+      cart.splice(index, 1); // remove from array
+      localStorage.setItem("cart", JSON.stringify(cart)); // save updated cart
+      renderCart(); // re-render
+    }
+  });
+
+  renderCart();
+});
+</script>
+
+</body>
+</html>

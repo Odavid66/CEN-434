@@ -1,0 +1,150 @@
+*
+{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+&::-webkit-scrollbar
+{
+    display: none;
+}
+
+body
+{
+    min-height: 100vh;
+    background-image: linear-gradient(180deg,hsl(0, 0%, 0%),hsl(353, 11%, 15%));
+    background-repeat: no-repeat;
+    background-size: cover;
+    color: white;
+}
+header
+{
+    height: 70vh;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-left: 120px;
+    padding-right: 60px;
+}
+
+header h1
+{
+    font-size: 60px;
+    letter-spacing: 3px;
+    animation: bounce 3s 1s forwards;
+}
+header p
+{
+    animation: slidein 3s 1s forwards;
+}
+
+.gridboxes
+{
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    grid-template-rows: repeat(3,1fr);
+    gap: 10px;
+    grid-auto-flow: dense;
+}
+
+.boxes
+{
+    background-color: rgb(131, 128, 128);
+    text-align: center;
+    padding: 20px 25px;
+    border-radius: 3px;  
+}
+
+.boxes img
+{
+    height: 40px;
+    width: auto;
+}
+
+hr
+{
+    width: 70vw;
+    margin-inline-start: 10.5rem;
+}
+
+.port
+{
+    padding-block-start: 3rem;
+    padding-block-end: 2rem;
+    padding-inline-start: 4rem;
+    display: flex;
+    align-items: center;
+    gap: 5rem;
+    flex-wrap: wrap;
+}
+
+section
+{
+    padding: 20px;
+    border-radius: 3px;
+    box-shadow: 2px 5px 4px rgb(106, 105, 105);
+    
+}
+
+section h2
+{
+    margin-bottom: 15px;
+    text-align: center;
+    color: rgb(211, 153, 77);
+}
+
+section ul, section ol
+{
+    list-style-type: none;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+section ul li:hover
+{
+    text-decoration: underline;
+    cursor: pointer;
+    color: rgb(249, 247, 136);
+    transform: translateX(5%);
+}
+
+section ol :nth-of-type(even)
+{
+    color: aqua;
+}
+
+.contact
+{
+    display: flex;
+    gap: 2rem;
+    justify-content: center;
+    align-items: center;
+}
+
+@keyframes bounce 
+{
+    0%{
+        transform: translateY(-300%);
+    }
+    25%{
+        transform: translateY(0%);
+    }
+    75%{
+        transform: translateY(-35%);
+    }
+    100%{
+        transform: translateY(0%);
+    }
+}
+
+@keyframes slidein
+{
+    0%{
+        transform: translateX(-200%);
+    }
+    100%{
+        transform: translateX(0%);
+    }
+}
+
